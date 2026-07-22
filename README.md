@@ -5,15 +5,10 @@
 - `app/src/context/AppContext.jsx` — theme is applied to `<html data-theme>`, persisted to `localStorage`, synced from the server preference on load, and exposed as `darkMode` / `setDarkMode` / `toggleDarkMode`.
 - `app/src/pages/Profile.jsx` — the Dark Mode row uses the context toggle, so it switches the whole UI instantly.
 
+## 2. Pay via M-Pesa / Equity / KCB → app download pages
+- `app/src/pages/Settlement.jsx` — each button opens the official app store download page in a new tab.
 
 
-## 3. Find people by @username (name & email no longer used or shown)
-- DB: `api/db/migrations/002_username.sql` (+ mirrored in `schema.sql`) — new `username` column, backfilled from email, deduped, unique index. **Run this migration before using the feature.**
-- `authController.register` — accepts/validates a username (auto-generates a unique one if omitted).
-- `userController.searchUsers` — matches **@username only** and returns `{id,name,username,initials}` (no email/phone).
-- `userController.lookupContacts` — returns username instead of email.
-- `MemberPicker.jsx` — placeholder "Search by @username"; results show `@handle`.
-- `Login.jsx` — sign-up form has a Username field. `Profile.jsx` shows/edits username.
 
 ## 4. "Who paid?" — choose the payer
 - `app/src/pages/AddExpense.jsx` — replaced the truncated payer chips with a full, selectable list of **all** group members, defaulting to you.
