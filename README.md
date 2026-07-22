@@ -8,10 +8,15 @@
 ## 2. Pay via M-Pesa / Equity / KCB → app download pages
 - `app/src/pages/Settlement.jsx` — each button opens the official app store download page in a new tab.
 
+## 3. Find people by @username (name & email no longer used or shown)
+- DB: `api/db/migrations/002_username.sql` (+ mirrored in `schema.sql`) — new `username` column, backfilled from email, deduped, unique index. **Run this migration before using the feature.**
+- `authController.register` — accepts/validates a username (auto-generates a unique one if omitted).
+- `userController.searchUsers` — matches **@username only** and returns `{id,name,username,initials}` (no email/phone).
+- `userController.lookupContacts` — returns username instead of email.
+- `MemberPicker.jsx` — placeholder "Search by @username"; results show `@handle`.
+- `Login.jsx` — sign-up form has a Username field. `Profile.jsx` shows/edits username.
 
 
-## 4. "Who paid?" — choose the payer
-- `app/src/pages/AddExpense.jsx` — replaced the truncated payer chips with a full, selectable list of **all** group members, defaulting to you.
 
 ## 5. Monthly spending is a line graph
 - `app/src/pages/Dashboard.jsx` — the Monthly Spending bar chart is now a smooth **area/line** chart (recharts).
