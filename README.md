@@ -5,8 +5,7 @@
 - `app/src/context/AppContext.jsx` — theme is applied to `<html data-theme>`, persisted to `localStorage`, synced from the server preference on load, and exposed as `darkMode` / `setDarkMode` / `toggleDarkMode`.
 - `app/src/pages/Profile.jsx` — the Dark Mode row uses the context toggle, so it switches the whole UI instantly.
 
-## 2. Pay via M-Pesa / Equity / KCB → app download pages
-- `app/src/pages/Settlement.jsx` — each button opens the official app store download page in a new tab.
+
 
 ## 3. Find people by @username (name & email no longer used or shown)
 - DB: `api/db/migrations/002_username.sql` (+ mirrored in `schema.sql`) — new `username` column, backfilled from email, deduped, unique index. **Run this migration before using the feature.**
