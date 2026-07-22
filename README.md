@@ -19,11 +19,10 @@
 - `app/src/pages/AddExpense.jsx` — replaced the truncated payer chips with a full, selectable list of **all** group members, defaulting to you.
 
 
+## 5. Monthly spending is a line graph
+- `app/src/pages/Dashboard.jsx` — the Monthly Spending bar chart is now a smooth **area/line** chart (recharts).
 
 
-## 6. Custom split that must total the bill
-- `AddExpense.jsx` — the "Custom" split lets each member enter their own amount, with a live "allocated vs total" banner; **Save is blocked** until it balances (a Percent mode requiring 100% is included too).
-- `expenseController.createExpense` — server-side guard rejects exact splits that don't total the amount, or percentages that don't total 100%.
 
 ## 7. Delete group & Delete account (with "Sorry to see you go")
 - `GroupDetail.jsx` — admin-only **Delete group** button (Members tab) → confirm → "👋 Sorry to see you go".
