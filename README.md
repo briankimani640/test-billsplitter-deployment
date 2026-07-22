@@ -15,11 +15,11 @@
 - `userController.lookupContacts` — returns username instead of email.
 - `MemberPicker.jsx` — placeholder "Search by @username"; results show `@handle`.
 - `Login.jsx` — sign-up form has a Username field. `Profile.jsx` shows/edits username.
+## 4. "Who paid?" — choose the payer
+- `app/src/pages/AddExpense.jsx` — replaced the truncated payer chips with a full, selectable list of **all** group members, defaulting to you.
 
 
 
-## 5. Monthly spending is a line graph
-- `app/src/pages/Dashboard.jsx` — the Monthly Spending bar chart is now a smooth **area/line** chart (recharts).
 
 ## 6. Custom split that must total the bill
 - `AddExpense.jsx` — the "Custom" split lets each member enter their own amount, with a live "allocated vs total" banner; **Save is blocked** until it balances (a Percent mode requiring 100% is included too).
